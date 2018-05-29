@@ -80,6 +80,22 @@ Install needed dependencies.  If this fails on your ubuntu install it may requir
 $ make install_deps
 ```
 
+You can start the truffle development environment and console
+```
+$ make start_console
+```
+
+From here, in a separate console we now need to bring up the ethereum bridge for the Oraclize.it service.
+```
+$ make start_bridge
+```
+
+Once the bridge has fully initialized, you should be able to run the example migrations for the MARKET Protocol smart contracts.
+```
+truffle(develop)> migrate
+```
+If this fails due to a `revert`, please be sure the bridge is listening prior to attempting the migration.
+
 A local blockchain is now running with a fully deployed suite of MARKET Protocol smart contracts.
 The needed .json ABI files can now be found in ./build/contracts/ 
 
