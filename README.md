@@ -57,6 +57,32 @@ $ cd YOURFOLDERNAME
 $ npm install
 ```
 
+A Makefile is provided for easy setup of the local development environment.
+
+Some pre-requisites are required in order to utilize the Makefile.
+
+NodeJS 8.11.2 LTS is recommended for compatibility.
+
+```
+$ git clone git@github.com:MARKETProtocol/MARKET.js.git  # clone this repository
+$ git clone https://github.com/MARKETProtocol/ethereum-bridge.git # and the needed oraclize.it bridge (for local test rpc)
+```
+
+From here you will be able to use make commands assuming npm is already installed.
+
+Assuming you have npm already, Install truffle
+```
+$ make install_truffle # may require sudo
+```
+
+Install needed dependencies.  If this fails on your ubuntu install it may require you to run `sudo apt-get install build-essential -y` prior to install.
+```
+$ make install_deps
+```
+
+A local blockchain is now running with a fully deployed suite of MARKET Protocol smart contracts.
+The needed .json ABI files can now be found in ./build/contracts/ 
+
 ## Features
 
  - **[RollupJS](https://rollupjs.org/)** for multiple optimized bundles following the [standard convention](http://2ality.com/2017/04/setting-up-multi-platform-packages.html) and [Tree-shaking](https://alexjoverm.github.io/2017/03/06/Tree-shaking-with-Webpack-2-TypeScript-and-Babel/)
